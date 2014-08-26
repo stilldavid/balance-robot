@@ -29,10 +29,10 @@ String[] names = {
   "move", "K1", "K2", "K3", "K4", "K2: aI", "K1: aV", "K4: wP", "K3: wV", "torque", "go"
 };
 int[] mins = {
-  0, 0, 0, 0, 0, -90, -20, 1000, -10, -255, 0
+  0, 0, 0, 0, 0, -100, -20, 10000, -50, -255, 0
 };
 int[] maxs = {
-  0, 3, 3, 3, 3, 90, 20, -1000, 10, 255, 255
+  0, 3, 3, 3, 3, 100, 20, -10000, 50, 255, 255
 };
 
 void setup () {
@@ -45,7 +45,7 @@ void setup () {
   // Open whatever port is the one you're using.
   //String portName = Serial.list()[7];
   //print(portName);
-  myPort = new Serial(this, "/dev/tty.usbmodem1451", 9600);
+  myPort = new Serial(this, "/dev/tty.usbserial-A600eD2X", 9600);
   myPort.clear();
   // don't generate a serialEvent() until you get a newline (\n) byte:
   myPort.bufferUntil('\n');
